@@ -1,5 +1,6 @@
 # shopping-intetion
 TensorFlow solution for "Online Shoppers Purchasing Intention Dataset Data Set" from UCI.
+https://archive.ics.uci.edu/ml/datasets/Online+Shoppers+Purchasing+Intention+Dataset#
 
 analysis.py - shows charts of all parameters, NOTE: some data can be overshadowed
 data_analysis.ipynb - same as analysis.py, but Jupyter Notebook
