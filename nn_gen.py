@@ -17,6 +17,9 @@ model = tf.keras.Sequential([
     tf.keras.layers.Input(shape=x[0].shape),
     tf.keras.layers.Dense(units=32, activation="relu"),
     tf.keras.layers.Dense(units=16, activation="relu"),
+    tf.keras.layers.Dense(units=8, activation="tanh"),
+    tf.keras.layers.Dense(units=8, activation="relu"),
+    tf.keras.layers.Dense(units=8, activation="tanh"),
     tf.keras.layers.Dropout(0.1),
     tf.keras.layers.Dense(units=8, activation="relu"),
     tf.keras.layers.Dropout(0.1),
@@ -63,7 +66,7 @@ training_batch_generator = BalancedGenerator(x1, x2, y1, y2, batch_size, ratio)
 
 for k in range(5):  # control overfit
     # requires np.asarray or throws "Data cardinality is ambiguous"
-    model.fit(training_batch_generator, epochs=50, verbose=1, callbacks=[lr_callback, tensorboard_callback])
+    model.fit(training_batch_generator, epochs=50, verbose=0, callbacks=[lr_callback]) #, tensorboard_callback])
 
     # model evaluation
     predictions = model.predict(np.asarray(x_eva))

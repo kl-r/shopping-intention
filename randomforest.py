@@ -8,8 +8,8 @@ x, y = utils.load_data()
 for k in range(3):
     x, y = shuffle(x, y)
     x_train, x_eva, y_train, y_eva = train_test_split(x, y, test_size=0.1)
-    x_train, y_train = utils.balance_data(x_train, y_train, ratio=(0.4, 0.6))
-    clf = RandomForestClassifier(max_depth=10, random_state=0)
+    x_train, y_train = utils.balance_data(x_train, y_train, ratio=(0.5, 0.5))
+    clf = RandomForestClassifier(random_state=0)
     clf.fit(x_train, y_train)
 
     predictions = clf.predict(x_eva)
