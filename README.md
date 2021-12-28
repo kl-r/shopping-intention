@@ -9,8 +9,6 @@ analysis.py - shows charts of all parameters, NOTE: some data can be overshadowe
 
 data_analysis.ipynb - same as analysis.py, but Jupyter Notebook
 
-multipage.pdf - all charts in PDF
-
 
 
 
